@@ -1,0 +1,99 @@
+.footer {
+    text-align: center;
+    background: #333333;
+    color: white;
+}
+
+.footer p {
+    margin: 6px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height:100vh;
+    background-color: white;
+    width: 100%;
+}
+header{
+    height:10vh;
+    width: 100%;
+    background: white;
+    position: fixed;
+    z-index: 11;
+}
+.main-h{
+    height: 100%;
+    background-color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 1em;
+}
+.line{
+    height:5px;
+    background-color: red;
+
+}
+
+.title-h{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-h h2{
+    margin: 0;
+    padding: 0;
+}
+
+.button-h ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:3em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.button-h ul li{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button-h ul a{
+    text-decoration: none;
+    color:black;
+}
+
+.button-h ul a p{
+    margin: 0;
+    padding: 0;
+}
+
+.underline{
+    content:'';
+    height:2px;
+    width: 0%;
+    background: red;
+    transition: width 0.1s linear;
+}
+.button-h ul a:hover .underline{
+    width: 100%;
+}

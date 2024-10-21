@@ -1,0 +1,88 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+    <link rel="icon" href="{% static 'image/logo.jpg' %}" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css'%}">
+
+
+    {% block style %}
+
+    {% endblock style %}
+
+</head>
+
+<body>
+
+    <header>
+        <div class="main-h">
+            <div class="title-h">
+                <img src="{% static 'image/logo.jpg' %}" width="50 px">
+                <h2>Blood Bank Management System</h2>
+            </div>
+            <div class="button-h">
+                <ul>
+                    <a href="{% url 'index'%}">
+                        <li><img src="{% static 'hdr_logo/home.png' %}" height="30px" alt="">
+                            <p>Home</p><span class="underline"></span>
+                        </li>
+                    </a>
+
+                    <a href="">
+                        <li><img src="{% static 'hdr_logo/about_us.png' %}" height="30px" alt="">
+                            <p>About</p><span class="underline"></span>
+                        </li>
+                    </a>
+
+                    <a href="">
+                        <li><img src="{% static 'hdr_logo/donate_blood.png' %}" height="30px" alt="">
+                            <p>Donate</p><span class="underline"></span>
+                        </li>
+                    </a>
+
+                    <a href="">
+                        <li><img src="{% static 'hdr_logo/request_blood.png' %}" height="30px" alt="">
+                            <p>Request</p><span class="underline"></span>
+                        </li>
+                    </a>
+
+                    <a href="">
+                        <li><img src="{% static 'hdr_logo/contact_us.png' %}" height="30px" alt="">
+                            <p>Contact</p><span class="underline"></span>
+                        </li>
+                    </a>
+                    <li><a href="{% url 'login'%}" class="btn btn-warning rounded-5 me-4">Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="line"></div>
+    </header>
+
+    <div style="background: white; height:10.7vh;"></div>
+
+    {% block content %}
+    {% endblock content %}
+
+    <footer class="footer">
+        <hr>
+        <p>ALL RIGHT RESERVED</p>
+        <p>COPYRIGHT &copy; 2024</p>
+        <p>&copy; 2024 Blood Bank Management System</p>
+        <hr>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
