@@ -14,9 +14,6 @@
     align-items: center;
 }
 
-body::-webkit-scrollbar {
-    display: none;
-}
 
 *{
     margin: 0;
