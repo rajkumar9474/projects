@@ -10,3 +10,5 @@ def index(request):
     return render(request,'index.html')
 def login(request):
     return render(request,'login.html')
+def donate_blood(request):
+    return render(request,'blood_donate.html')

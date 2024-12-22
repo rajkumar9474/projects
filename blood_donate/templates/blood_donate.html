@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+donate blood - Blood Bank Management System
+{% endblock title %}
+
+
+{% block style %}
+<style>
+    .login-container {
+        background-color: white;
+        padding: 40px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 350px;
+        text-align: center;
+    }
+
+    .login-container h2 {
+        color: red;
+        /* margin-bottom: 30px; */
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"], 
+    .login-container input[type="tel"], 
+    .login-container input[type="email"] ,
+    .login-container select
+    {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .login-container input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    .login-container a {
+        color: #0096D6;
+        text-decoration: none;
+        display: block;
+        margin-top: 15px;
+    }
+</style>
+
+<style>
+    /* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        } */
+        /* .form-container {
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 400px;
+        }
+        .form-container h2 {
+            color: #b30000;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .form-container label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="tel"],
+        .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #b30000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #8B0000;
+        }
+        .conditional-field {
+            display: none;
+        } */
+</style>
+{% endblock style %}
+
+
+
+{% block content %}
+<div class="flex" style="margin-block: 61px;">
+    <div style="height:100vh; width:100vw;position:absolute;z-index:-1;overflow:hidden;">
+        <img src="{% static 'image/background.jpg'%}"
+            style="object-fit:cover;overflow:hidden;transform: translateY(-300px);filter:blur(3px); " alt="">
+    </div>
+    <div class="login-container">
+        <h2>Blood Donation Registration</h2>
+        <form>
+            <input type="text" id="name" name="name" placeholder="Enter Name" required>
+
+            <input type="tel" id="phone" name="ph_num" required pattern="[0-9]{10}" placeholder="1234567890">
+
+            <input type="email" id="email" name="email" placeholder="something@domain.com" required>
+
+            <input type="text" id="address" name="address" placeholder="enter your address" required>
+
+            <select  id="blood-group" name="blood_group" required>
+                <option value="">Select Blood Group</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="AB">AB</option>
+                <option value="O">O</option>
+            </select>
+
+            <select id="health-status" name="health_status" onchange="toggleDiseaseField()" required>
+                <option value="">Have Health disease</option>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+
+            <div id="disease-type-field" class="conditional-field">
+                <select id="disease-type" name="disease_type">
+                    <option value="">Select Disease Type</option>
+                    <option value="None">None</option>
+                    <option value="Diabetes">Diabetes (non-insulin dependent)</option>
+                    <option value="Hypertension">Hypertension (controlled blood pressure)</option>
+                    <option value="Asthma">Asthma (stable condition)</option>
+                    <option value="Cold_Flu">Recent Cold or Flu (recovered)</option>
+                    <option value="Minor_Infection">Minor Infection (recovered)</option>
+                    <option value="Vaccinated">Recently Vaccinated</option>
+                    <option value="HIV">HIV/AIDS</option>
+                    <option value="Hepatitis">Hepatitis B or C</option>
+                    <option value="Cancer">Cancer (not including minor skin cancers)</option>
+                    <option value="Heart_Disease">Heart Disease</option>
+                    <option value="Tuberculosis">Tuberculosis (active)</option>
+                    <option value="Blood_Clotting_Disorder">Blood Clotting Disorders</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Register as Donor">
+        </form>
+        </form>
+    </div>
+</div>
+{% endblock content %}
